@@ -1,0 +1,363 @@
+<div class="settings">
+	<mat-tab-group>
+		<!-- utility start -->
+		<mat-tab label="Utility">
+			<form [formGroup]="utilityForm" (ngSubmit)="SaveUtilitySettings()">
+				<div class="settings_container">
+					<div class="form-group">
+						<div class="label">
+							<label for="heroName">Hero Name</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="heroName"
+								id="heroName"
+								[ngClass]="{ 'has-Error': formErrors.heroName }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.heroName">
+							{{ formErrors.heroName }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="heroDesc">Hero Desc</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="heroDesc"
+								id="heroDesc"
+								[ngClass]="{ 'has-Error': formErrors.heroDesc }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.heroDesc">
+							{{ formErrors.heroDesc }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="heroImage">Hero Image</label>
+						</div>
+						<div class="input">
+							<input
+								type="file"
+								#heroImage
+								(change)="uploadHeroImage(heroImage.files)"
+								id="heroImage"
+							/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="logo">Logo</label>
+						</div>
+						<div class="input">
+							<input
+								type="file"
+								#logo
+								(change)="uploadLogo(logo.files)"
+								id="logo"
+							/>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="slogan">Slogan</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="slogan"
+								id="slogan"
+								[ngClass]="{ 'has-Error': formErrors.slogan }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.slogan">
+							{{ formErrors.slogan }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="label">
+							<label for="strength">strength</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="strengthDesc"
+								id="strength"
+								[ngClass]="{ 'has-Error': formErrors.strengthDesc }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.strengthDesc">
+							{{ formErrors.strengthDesc }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="Phone">Phone</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="phone"
+								id="Phone"
+								[ngClass]="{ 'has-Error': formErrors.phone }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.phone">
+							{{ formErrors.phone }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="Email">Email</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="email"
+								id="Email"
+								[ngClass]="{ 'has-Error': formErrors.email }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.email">
+							{{ formErrors.email }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="FbLink">Facebook</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="fbLink"
+								id="FbLink"
+								[ngClass]="{ 'has-Error': formErrors.fbLink }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.fbLink">
+							{{ formErrors.fbLink }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="TwitterLink">Twitter</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="twitLink"
+								id="TwitterLink"
+								[ngClass]="{ 'has-Error': formErrors.twitLink }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.twitLink">
+							{{ formErrors.twitLink }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="InstaLink">Instagram</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="instaLink"
+								id="InstaLink"
+								[ngClass]="{ 'has-Error': formErrors.instaLink }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.instaLink">
+							{{ formErrors.instaLink }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="label">
+							<label for="inLink">Linkedn</label>
+						</div>
+						<div class="input">
+							<input
+								type="text"
+								formControlName="inLink"
+								id="inLink"
+								[ngClass]="{ 'has-Error': formErrors.inLink }"
+								(blur)="logValidationErrors(utilityForm)"
+							/>
+						</div>
+						<div class="invalid-feedback" *ngIf="formErrors.inLink">
+							{{ formErrors.inLink }}
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" [disabled]="utilityForm.invalid">
+							<i class="bx bx-send"></i>
+							Send
+						</button>
+					</div>
+				</div>
+			</form>
+		</mat-tab>
+		<!-- utility end -->
+
+		<!-- Terms start -->
+		<mat-tab label="Terms">
+			<div class="settings_container">
+				<div class="form-group">
+					<div class="label">
+						<label for="desc">Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="desc" id="desc" />
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit">
+						<i class="bx bx-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+		</mat-tab>
+		<!-- Terms end -->
+
+		<!-- Services start -->
+		<mat-tab label="Services">
+			<div class="settings_container">
+				<div class="form-group">
+					<div class="label">
+						<label for="title">Title</label>
+					</div>
+					<div class="input">
+						<input type="text" name="title" id="title" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="desc">Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="desc" id="desc" />
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit" [disabled]="!utilityForm.valid">
+						<i class="bx bx-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+		</mat-tab>
+		<!-- Services end -->
+
+		<!-- Privacy start -->
+		<mat-tab label="Privacy Policy">
+			<div class="settings_container">
+				<div class="form-group">
+					<div class="label">
+						<label for="desc">Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="desc" id="desc" />
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit">
+						<i class="bx bx-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+		</mat-tab>
+		<!-- Privacy end -->
+
+		<!-- About start -->
+		<mat-tab label="About Us">
+			<div class="settings_container">
+				<div class="form-group">
+					<div class="label">
+						<label for="miniDesc">Mini Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="miniDesc" id="miniDesc" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="desc">Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="desc" id="desc" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="imageOne">Image One</label>
+					</div>
+					<div class="input">
+						<input type="file" name="imageOne" id="imageOne" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="imageTwo">Image Two</label>
+					</div>
+					<div class="input">
+						<input type="file" name="imageTwo" id="imageTwo" />
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit">
+						<i class="bx bx-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+		</mat-tab>
+		<!-- About end -->
+
+		<!-- Areas start -->
+		<mat-tab label="Key Areas">
+			<div class="settings_container">
+				<div class="form-group">
+					<div class="label">
+						<label for="desc">Description</label>
+					</div>
+					<div class="input">
+						<input type="text" name="desc" id="desc" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="icon">Icon</label>
+					</div>
+					<div class="input">
+						<input type="text" name="icon" id="icon" />
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit">
+						<i class="bx bx-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+		</mat-tab>
+		<!-- Areas end -->
+	</mat-tab-group>
+</div>

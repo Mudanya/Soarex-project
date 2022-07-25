@@ -1,0 +1,72 @@
+@use "../base/colors" as *;
+@use "../util/" as *;
+.key-areas {
+	display: relative;
+
+	&__container {
+		display: flex;
+		gap: 2rem;
+		position: relative;
+		margin: 6rem 0 11rem;
+		width: calc(100vw - 12rem);
+		height: 19rem;
+		background: $primary2-color;
+		z-index: 4;
+		border-radius: 0 8rem 0 0;
+		@include breakpoint-down(medium) {
+			gap: 1rem;
+			width: calc(100vw - 7rem);
+			flex-direction: column;
+            overflow: hidden;
+            height: fit-content;
+			padding-bottom: 2rem;
+		}
+		@include breakpoint-down(small){
+			width: 100vw;
+		border-radius: 0 4rem 0 0;
+	}
+	}
+	&__title {
+		height: 100%;
+		background: $primary-color;
+		display: inline-flex;
+		width: fit-content;
+		align-items: center;
+		justify-content: end;
+		@include breakpoint-down(medium) {
+			width: 100%;
+			height: fit-content;
+            padding-left: 4rem;
+		}
+
+
+		h2 {
+			transform: rotate(-90deg);
+			width: 100%;
+			color: $secondary-color;
+			@include breakpoint-down(medium) {
+				transform: unset;
+			}
+			@include breakpoint-down(small){
+				text-align: center;
+			}
+		}
+	}
+	&__cards {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		@include breakpoint-down(medium) {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+			padding: 1rem 0;
+			place-items: center;
+		}
+		@include breakpoint-down(small){
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

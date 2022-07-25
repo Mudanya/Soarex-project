@@ -1,0 +1,65 @@
+<!--------------- *start of Hero Section* ----------------->
+<section class="hero">
+	<div class="hero__left">
+		<div class="hero__content">
+			<h1 class="hero__title">{{ (settings$ | async)?.heroName }}</h1>
+			<p>
+				{{ (settings$ | async)?.heroDesc }}
+			</p>
+			<button class="btn-primary">Get started</button>
+		</div>
+	</div>
+	<div class="hero__right"></div>
+	<div class="hero__light-bg"></div>
+</section>
+<!----------------- *end of Hero Section* ----------------->
+
+<!--------------- *start of key-areas Section* ----------------->
+<section class="key-areas">
+	<div class="key-areas__container">
+		<div class="key-areas__title">
+			<h2>Key Areas</h2>
+		</div>
+		<div class="key-areas__cards">
+			<app-card
+				[icon]=""
+				[text]=""
+			></app-card>
+			
+		</div>
+	</div>
+</section>
+<!----------------- *end of key-areas Section* ----------------->
+
+<!--------------- *start of axhievement Section* ----------------->
+<section class="achievement">
+	<div class="achievement__left">
+		<h2 class="achievement__title"><span>Our</span> Greatest Strength</h2>
+		<p>
+			{{ (settings$ | async)?.strengthDesc }}
+		</p>
+	</div>
+	<div class="achievement__right">
+		<h2 class="title">Customer Feedback</h2>
+		<div class="content">
+			<app-review src="./assets/images/avatar1.jpg"></app-review>
+		</div>
+	</div>
+</section>
+<!----------------- *end of axhievement Section* ----------------->
+<!--------------- *start of services Section* ----------------->
+<section class="services" id="services">
+	<div class="services__container">
+		<h2 class="title">Our Services</h2>
+		<div class="details">
+			<div *ngFor="let serv of services$ | async">
+				<app-services [service]="serv"></app-services>
+			</div>
+		</div>
+	</div>
+</section>
+<!----------------- *end of services Section* ----------------->
+
+<!--------------- *start of footer Section* ----------------->
+
+<!----------------- *end of footer Section* ----------------->

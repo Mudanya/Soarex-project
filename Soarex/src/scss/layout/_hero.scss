@@ -1,0 +1,75 @@
+@use "../util/" as *;
+@use "../base/colors" as *;
+.hero {
+	@include breakpoint-down(small) {
+		height: fit-content;
+	}
+	&__left {
+		width: 70%;
+		height: calc(100vh - 2rem);
+		background: $secondary-color;
+		position: relative;
+		top: 0;
+		border-radius: 0 0 8rem 0;
+		display: flex;
+		align-items: center;
+		z-index: 2;
+		@include breakpoint-down(medium) {
+			height: 80vh;
+		}
+		@include breakpoint-down(small) {
+			width: 100%;
+		    border-radius: 0 0 4rem 0;
+    }
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-inline: 5rem 3rem;
+		@include breakpoint-down(small) {
+		margin-inline: 1rem;
+    }
+		.btn-primary {
+			width: fit-content;
+		}
+	}
+
+	&__right {
+		position: absolute;
+		width: 34%;
+		height: 60%;
+		background: $primary-color;
+		right: 0;
+		top: 25%;
+		border-radius: 0 0 4rem 0;
+		z-index: 3;
+		@include breakpoint-down(medium) {
+			top: 18%;
+			height: 50%;
+		}
+		@include breakpoint-down(small) {
+			position: relative;
+			width: 100%;
+            height: 60vh;
+            margin-top: 5rem;
+		}
+	}
+	&__light-bg {
+		position: absolute;
+		width: 100vw;
+		height: calc(100vh + 9rem);
+		background: $primary-lighter-color;
+		top: 0;
+		left: 0;
+		border-radius: 0 0 12rem 0;
+		@include breakpoint-down(medium) {
+			height: 97 vh;
+		}
+        @include breakpoint-down(small) {
+			height:180vh;
+            border-radius: 0;
+		}
+	}
+}

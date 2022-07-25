@@ -1,0 +1,48 @@
+<nav class="nav" [class.on]="!isOpen" @fade>
+	<div class="container">
+		<div class="nav__logo"></div>
+		<ul class="nav__items">
+			<li class="hov">
+				<a routerLink="/index" routerLinkActive="active">Home</a>
+			</li>
+			<li class="hov">
+				<a routerLink="/about" routerLinkActive="active">About</a>
+			</li>
+			<li class="hov">
+				<a routerLink="/index" fragment="services" routerLinkActive="active"
+					>Services</a
+				>
+			</li>
+			<li class="hov">
+				<a routerLink="/feedback" routerLinkActive="active">Feedback</a>
+			</li>
+		</ul>
+		<ul class="nav__items">
+			
+			<li class="hov">
+				<div class="phone-top"><i class="bx bxs-phone-call"></i></div>
+				<a routerLink="/contact-us" routerLinkActive="active">Contact Us</a>
+			</li>
+			<li class="hov">
+				<a routerLink="/enquiry" routerLinkActive="active">Enquiry</a>
+			</li>
+			<li>
+				<a
+					routerLink="/auth/sign-up"
+					routerLinkActive="active"
+					class="btn-secondary"
+					>Get Started</a
+				>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="closables">
+	<div class="nav__logo"></div>
+	<button class="close" (click)="toggleNavOn()" [class.on]="!isOpen">
+		<i class="bx bx-x"></i>
+	</button>
+	<button class="open" (click)="toggleNavOff()" [class.on]="isOpen">
+		<i class="bx bx-menu"></i>
+	</button>
+</div>

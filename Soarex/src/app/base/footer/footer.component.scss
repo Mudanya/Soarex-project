@@ -1,0 +1,80 @@
+@use '../../../scss/util/' as *;
+@use '../../../scss/base/colors' as *;
+
+.footer {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        padding: 2rem 0 0 8rem;
+        @include breakpoint-down(medium){
+            padding-left: 4rem;
+            gap: 1rem;
+        }
+    @include breakpoint-down(small){
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem 0 0;
+    }
+
+    }
+        
+        color: $secondary-color;
+    &__logo{
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            @include breakpoint-down(small){
+                padding-inline: 1rem;
+            }
+        }
+    }
+    &__links {
+        h2{
+            margin-bottom: 1rem;
+        }
+    }
+    &__items, &__privacy{
+        h2{
+            margin-bottom: 1rem;
+        }
+        li {
+            a{
+                color: $secondary-color;
+            }
+        }
+    }
+    &__contact-us{
+        h2{
+            margin-bottom: 1rem;
+        }
+        display: flex;
+        flex-direction: column;
+        .icons{
+    @include breakpoint-down(small){
+        margin: 0.5rem auto;
+    }
+            display: flex;
+            gap:.8rem;
+            a{
+                i{
+                    color: $secondary-color;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .copyright{
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+        border-top: 1px solid $secondary-color;
+        h2{
+            font-weight: 200;
+            font-size: 1.2rem;
+        }
+    }
+}

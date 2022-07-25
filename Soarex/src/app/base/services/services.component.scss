@@ -1,0 +1,23 @@
+@use '../../../scss/base/colors' as *;
+@use '../../../scss/util/' as *;
+article {
+    display: flex;
+    gap: 2rem;
+    background: $primary-color;
+    padding: .6rem .5rem;
+    @include breakpoint-down(small){
+        gap: 1rem;
+    }
+    .icon{
+        i {
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+    }
+    .content {
+        p{
+            font-size: .95rem;
+        }
+    }
+}

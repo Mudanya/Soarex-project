@@ -1,0 +1,13 @@
+<div class="hyperheader" [class.is-hyper]="isHyper"></div>
+<header class="home">
+    <app-nav></app-nav>
+</header>   
+
+
+
+<router-outlet></router-outlet>
+<!--------------- *start of footer Section* ----------------->
+
+<app-footer util="home" [settings]="settings$ | async"></app-footer>
+
+<!----------------- *end of footer Section* ----------------->

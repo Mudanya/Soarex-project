@@ -1,0 +1,38 @@
+@use '../util/' as *;
+@use 'colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: $primary-light-color
+}
+button {
+    outline: none;
+    border: none;
+}
+img{
+    width: 100%;
+}
+
+.btn-secondary {
+    @include button($secondary-color,$primary-color);
+    &:hover {
+        background: lighten($secondary-color, 2%);
+        transform: scale(2,2);
+        box-shadow: 0 0 .5rem rgba($color: $secondary-color, $alpha: .9);
+        color: rgba($primary-color,0.8) !important
+    }
+}
+
+.btn-primary {
+    @include button($primary-color, $secondary-color);
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    box-shadow: 0.3rem 1rem 1.1rem rgba($primary-color,0.3);
+}

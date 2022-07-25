@@ -1,0 +1,5 @@
+@use '../../../scss/util/' as *;
+
+button {
+    @include buttonFWidth;
+}

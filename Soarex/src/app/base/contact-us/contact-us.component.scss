@@ -1,0 +1,183 @@
+@use "../../../scss/base/colors" as *;
+@use "../../../scss/util/" as *;
+.contact {
+	display: flex;
+	margin-bottom: 12rem;
+	@include breakpoint-down(medium) {
+		margin-bottom: 18rem;
+	}
+	@include breakpoint-down(small) {
+		flex-direction: column;
+		gap: 3rem;
+        margin-bottom: 10rem;
+	}
+	&__left {
+		position: relative;
+		width: calc(50vw - 10rem);
+		margin: 12rem 0 0 15rem;
+		background: $primary-color;
+		z-index: 3;
+		min-height: calc(60vh);
+		color: $secondary-color;
+		border-radius: 4rem;
+		padding: 1.5rem 3rem;
+		@include breakpoint-down(medium) {
+			width: 50vw;
+			margin: 11rem 0 0 5rem;
+			padding: 3rem;
+            min-height: fit-content;
+		}
+		@include breakpoint-down(small) {
+			width: 90vw;
+			margin: 6rem auto 0;
+            
+		}
+		&::before {
+			content: "Contact Us";
+			width: fit-content;
+			height: 3rem;
+			position: absolute;
+			background: $primary-color;
+			top: -3rem;
+			left: 50%;
+			color: $secondary-color;
+			padding: 0.8rem;
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: 500;
+			transform: translateX(-50%);
+			border-radius: 2rem 2rem 0 0;
+			@include breakpoint-down(medium) {
+				height: 1rem;
+				font-size: 1rem;
+				top: -2rem;
+			}
+		}
+
+		.form-group {
+			label {
+				display: block;
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+				@include breakpoint-down(medium) {
+					margin-bottom: 0.1rem;
+				}
+			}
+			input {
+				border-radius: 0.5rem;
+				display: block;
+				width: 100%;
+				height: 2rem;
+				background: $primary-lighter-color;
+				outline: none;
+				border: 1.2px solid transparent;
+				font-size: 1.2rem;
+				margin-bottom: 0.5rem;
+				@include breakpoint-down(medium) {
+					margin-bottom: 0.1rem;
+				}
+				&:focus {
+					box-shadow: 0 0 1rem rgba($secondary-color, 0.5);
+					border-color: rgba($secondary-color, 0.9);
+				}
+			}
+			textarea {
+				width: 100%;
+				border-radius: 0.5rem;
+				resize: none;
+				border: 1.2px solid transparent;
+				outline: none;
+				font-size: 1.2rem;
+				background: $primary-lighter-color;
+				margin-bottom: 1rem;
+				@include breakpoint-down(medium) {
+					height: 4rem;
+					font-size: 1rem;
+				}
+				&:focus {
+					box-shadow: 0 0 1rem rgba($secondary-color, 0.5);
+					border-color: rgba($secondary-color, 0.9);
+					margin: 0.1rem;
+				}
+			}
+		}
+		button {
+			margin-top: 0.4rem;
+			width: 100%;
+			height: 3rem;
+			border-radius: 0.5rem;
+			background: $secondary-color;
+			color: $primary-color;
+			font-size: 1.5rem;
+			cursor: pointer;
+			@include breakpoint-down(medium) {
+				height: 2rem;
+				margin-top: 0;
+			}
+			i {
+				transform: rotate(-40deg);
+			}
+			&:hover {
+				box-shadow: 0 0 1rem rgba($secondary-color, 0.5);
+				transform: scale(1.01);
+			}
+		}
+	}
+	&__right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: $primary2-color;
+		color: $primary-lighter-color;
+		width: calc(50vw - 4rem);
+		height: calc(100vh - 2rem);
+		display: flex;
+		align-items: center;
+		padding: 2rem 2rem 2rem calc(25% - 8rem);
+		border-radius: 0 0 8rem;
+		@include breakpoint-down(medium) {
+			height: 70vh;
+            width: 55vw;
+		
+		}
+        @include breakpoint-down(small) {
+            position: relative;
+            width: 90vw;
+            top: unset;
+            right: unset;
+            margin-inline: auto;
+            border-radius: 0 0 4rem 4rem;
+            height: fit-content;
+            text-align: center;
+        }
+		.content {
+			font-size: 1.3rem;
+			@include breakpoint-down(medium) {
+                margin-left: 4rem;
+            }
+			@include breakpoint-down(small) {
+                width: 100%;
+                margin: 0;
+                font-size: 1rem;
+            }
+			.mail {
+				margin: 2rem 0 2rem 4rem;
+			@include breakpoint-down(medium) {
+                margin-left: 1rem;
+            }
+			@include breakpoint-down(small) {
+                margin-inline: 0;
+            }
+			}
+			.location {
+				margin-left: 8rem;
+                @include breakpoint-down(medium) {
+                    margin-left: 6rem;
+                }
+			@include breakpoint-down(small) {
+                margin: 0;
+            }
+			}
+		}
+	}
+}

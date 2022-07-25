@@ -1,0 +1,40 @@
+@use '../../../scss/util/' as *;
+@use '../../../scss/base/colors' as *;
+
+.card {
+    @include card(15.5rem,12.5rem,$secondary-color,$primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border-radius: 2rem;
+    box-shadow: .5rem .6rem 1rem rgba($primary-color, .7);
+    transition: all 400ms ease;
+    @include breakpoint-down(medium) {
+        @include card(19.5rem,12.5rem,$secondary-color,$primary-color)
+    }
+    &:hover {
+        margin-top: -1rem;
+    }
+    &__icon{
+        display: flex;
+        justify-content: center;
+        padding: .5rem;
+        
+        i{
+            width: fit-content;
+            height: fit-content;
+            font-size: 2rem;
+            background: $primary-lighter-color;
+            padding: .5rem;
+            border-radius: 50%;
+            box-shadow: .3rem .4rem .8rem rgba($primary-color, .4);
+        }
+
+    }
+    p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+}
+

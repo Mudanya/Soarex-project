@@ -1,0 +1,133 @@
+@use "../base/colors" as *;
+@use "../util/" as *;
+.nav {
+	background: $primary-color;
+	height: 4rem;
+	display: grid;
+	position: fixed;
+	top: 4rem;
+	margin-left: 5rem;
+	padding-left: 3rem;
+	width: calc(100vw - 5rem);
+	border-radius: 3rem 0 0 0;
+	z-index: 10;
+	transition: all 400ms ease;
+
+	@include breakpoint-down(medium) {
+		padding-left: 2rem;
+	}
+	@include breakpoint-down(small) {
+		margin-left: 0;
+		top: 0;
+		border-radius: 2rem 0 0 0;
+		display: flex;
+		width: 50%;
+		flex-direction: column;
+		height: fit-content;
+		border-radius: 0;
+		padding: 1rem 0;
+		position: fixed;
+		right: 1rem;
+		top: 2rem;
+		box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.3);
+		display: none;
+		&.on {
+			display: block;
+		}
+	}
+	.container {
+		display: flex;
+		justify-content: space-between;
+		@include breakpoint-down(small) {
+			flex-direction: column;
+		}
+		.nav__logo {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: -1.5rem;
+			background: $primary-lighter-color;
+			width: 7rem;
+			height: 7rem;
+			border-radius: 50%;
+			box-shadow: 1rem 1rem 1.5rem rgba($primary-color, 0.2);
+			@include breakpoint-down(small) {
+				display: none;
+			}
+		}
+		.nav__items {
+			display: flex;
+			align-items: center;
+			gap: 10rem;
+
+			@include breakpoint-down(large) {
+				gap: 2rem;
+			}
+			@include breakpoint-down(medium) {
+				gap: 1rem;
+			}
+			@include breakpoint-down(small) {
+				flex-direction: column;
+				text-align: start;
+				padding-inline: 1rem;
+			}
+
+			li {
+				@include breakpoint-down(small) {
+					align-self: start;
+					width: 100%;
+				}
+				transition: all 400ms ease;
+				&.hov {
+					border-bottom: 1px solid transparent;
+
+					&:hover {
+						border-color: $secondary-color;
+						a {
+							color: darken($secondary-color, 0.2);
+						}
+					}
+				}
+				a {
+					color: $secondary-color;
+					&.active {
+						border-bottom: 1px solid $secondary-color;
+					}
+					font-size: 1.5rem;
+					font-weight: 400;
+					@include breakpoint-down(medium) {
+						font-size: 1.1rem;
+					}
+				}
+			}
+
+			&:nth-child(3) {
+				padding-right: 2rem;
+				li:first-child {
+					position: relative;
+					display: flex;
+					.phone-top {
+						@include breakpoint-down(small) {
+							display: none;
+						}
+						width: 3.5rem;
+						height: 3.5rem;
+						position: absolute;
+						background: $primary-color;
+						bottom: 100%;
+						left: 50%;
+						transform: translateX(-50%);
+						border-radius: 1.5rem 1.5rem 0 0;
+						color: $secondary-color;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						i {
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+@use "../../../scss/base/colors" as *;
+@use "../../../scss/util/breakpoints" as *;
+.settings {
+	margin: 12rem 5rem 14rem;
+	&_container {
+		padding-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+		.form-group {
+			margin-bottom: 1rem;
+			display: flex;
+			justify-content: end;
+			gap: 1rem;
+			flex-direction: column;
+			align-self: flex-start;
+			.label {
+				color: $primary-color;
+				text-transform: capitalize;
+				text-align: start;
+			}
+			.invalid-feedback{
+				color: red;
+			}
+			.input {
+				
+				width: 100%;
+				
+				textarea {
+					width: 100%;
+					resize: none;
+					border-radius: 0.5rem;
+					outline: 0;
+					border: 1px solid transparent;
+					font-size: 1.1rem;
+
+					&:focus {
+						box-shadow: 0 0 0.5rem rgba($secondary-color, 0.5);
+						border-color: $secondary-color;
+					}
+				}
+				input {
+					&.has-Error{
+						border-color: red
+					};
+					width: 100%;
+					height: 2rem;
+					border-radius: 0.5rem;
+					outline: 0;
+					border: 1px solid transparent;
+					font-size: 1.1rem;
+
+					&:focus {
+						box-shadow: 0 0 0.5rem rgba($secondary-color, 0.5);
+						border-color: $secondary-color;
+					}
+				}
+			}
+            button {
+                margin-top: .4rem;
+                width: 30vw;
+                height: 2rem;
+                border-radius: .5rem;
+                background: $secondary-color;
+                color: $primary-color;
+                font-size: 1.5rem;
+                cursor: pointer;
+				&[disabled]{
+					cursor:not-allowed
+				};
+                i{
+                    transform: rotate(-40deg);
+                }
+                &:hover{
+                    box-shadow: 0 0 1rem rgba($secondary-color, .5);
+                    transform: scale(1.01);
+                }
+            }
+		}
+	}
+}

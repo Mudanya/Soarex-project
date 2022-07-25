@@ -1,0 +1,53 @@
+@use '../../../scss/base/colors' as *;
+@use '../../../scss/util/' as *;
+.closables {
+    width: 100vw;
+    height: 3rem;
+    z-index: 11;
+    position: fixed;
+    top:0;
+    background: $primary-color;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 1rem;
+    display: none;
+    @include breakpoint-down(small){
+        display: block;
+    }
+    .nav__logo {
+        position: absolute;
+        left: 0;
+        top: -1.5rem;
+        background: $primary-lighter-color;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 0 0 7rem 0;
+        box-shadow: 1rem 1rem 1.5rem rgba($primary-color, 0.2);
+
+    }
+
+    button{
+        &.close{
+            display: none;
+            &.on{
+                display: block;
+            }
+        }
+        &.open{
+            display: none;
+            &.on{
+                display: block;
+            }
+        }
+        position: absolute;
+        top: .5rem;
+        right: 1rem;
+        background: none;
+        height: 2rem;
+        i {
+            font-size: 2rem;
+            color: $secondary-color;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use '../../../scss/base/colors' as *;
+
+article{
+    color: $secondary-color;
+    .avatar{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        border: .3rem solid $primary-color;
+    }
+   .content {
+        margin-top: 2rem;
+       background: $primary-color;
+       color: $secondary-color;
+        padding: .8rem;
+        position: relative;
+        p{
+            font-size: .9rem;
+        }
+       &::before {
+           content: "";
+           width: 2rem;
+           height: 2rem;
+           background: linear-gradient(135deg,transparent, rgba($primary-color,.4),rgba($primary-color,.9),$primary-color,transparent,transparent);
+           left: calc(50% - 1rem);
+           display: block;
+           position: absolute;
+           top:-1rem;
+           transform: rotate(45deg);
+       }
+   }
+   
+}

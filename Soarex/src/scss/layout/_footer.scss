@@ -1,0 +1,19 @@
+@use '../util/' as *;
+@use "../base/colors" as *;
+
+.footer {
+	position: relative;
+	width: 100vw;
+	height: fit-content;
+	background: $primary-color;
+	border-radius: 8rem 0 0 0;
+    margin-top: 8rem;
+	@include breakpoint-down(small) {
+		border-radius: 4rem 0 0 0;
+	}
+	
+
+	&.other {
+		margin-top: 8rem;
+	}
+}

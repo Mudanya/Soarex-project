@@ -1,0 +1,43 @@
+@use "../base/colors" as *;
+@use "../util/" as *;
+
+.services {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100vw;
+	height: fit-content;
+	padding-bottom: 9rem;
+	background: $primary2-color;
+	margin-top: 9rem;
+	border-radius: 8rem 0 0 0;
+	@include breakpoint-down(small) {
+		margin-top: 5rem;
+	border-radius: 4rem 0 0 0;
+}
+
+	&__container {
+		color: $secondary-color;
+		width: calc(100vw - 14rem);
+		@include breakpoint-down(medium) {
+			width: calc(100vw - 7rem);
+		}
+		padding: 1rem 0;
+		.title {
+			text-align: center;
+		}
+        @include breakpoint-down(small) {
+            width: 90vw;
+        }
+	}
+	.details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-top: 1rem;
+		@include breakpoint-down(small) {
+            display: flex;
+            flex-direction: column;
+		}
+	}
+}

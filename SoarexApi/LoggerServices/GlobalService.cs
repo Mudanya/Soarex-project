@@ -18,8 +18,12 @@ namespace Services
             if (file?.Length > 0)
             {
                 var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var fileWithNoExt = Path.GetFileNameWithoutExtension(fileName);
+                var fileExt = Path.GetExtension(fileName);
+                fileName = $"{fileWithNoExt}_{file.Name}{fileExt}";
                 var fullPath = Path.Combine(pathToSave, fileName);
-                dbPath = Path.Combine(folderName, fileName);
+                var dbPartialPath = Path.Combine(folderName, fileName);
+                dbPath = dbPartialPath.Replace("\\", "/");
                 using (var stream = new FileStream(fullPath, FileMode.Create))
                 {
                     file.CopyTo(stream);

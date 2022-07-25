@@ -98,5 +98,7 @@ namespace SoarexApi.Extensions
 
         public static void ConfigureGlobalService(this IServiceCollection services)
             => services.AddScoped<GlobalService>();
+        public static void ConfigureKeyAreasService(this IServiceCollection services)
+            => services.AddScoped<KeyAreasService>();
     }
 }

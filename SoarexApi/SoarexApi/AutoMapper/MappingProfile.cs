@@ -4,6 +4,7 @@ using Entities.DataTransferObjects.Authentication;
 using Entities.DataTransferObjects.Contact;
 using Entities.DataTransferObjects.CustomerFeedback;
 using Entities.DataTransferObjects.Enquiry;
+using Entities.DataTransferObjects.KeyAreas;
 using Entities.DataTransferObjects.PrivacyPolicy;
 using Entities.DataTransferObjects.Settings;
 using Entities.DataTransferObjects.Terms;
@@ -34,6 +35,8 @@ namespace SoarexApi.AutoMapper
             CreateMap<AboutUsUpsertDto, AboutUs>();
             CreateMap<AboutUs, AboutUsDto>();
             CreateMap<RegisterDto, ApplicationUser>();
+            CreateMap<KeyAreasUpsertDto, KeyAreas>();
+            CreateMap<KeyAreas, KeyAreasDto>();
         }
     }
 }

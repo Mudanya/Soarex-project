@@ -26,5 +26,7 @@ namespace Entities
         public DbSet<Service> Services { get; set; }
         public DbSet<Settings> Settings { get; set; }
         public DbSet<Terms> Terms { get; set; }
+        public DbSet<KeyAreas> KeyAreas { get; set; }
+
     }
 }

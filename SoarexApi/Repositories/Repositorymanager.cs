@@ -19,6 +19,7 @@ namespace Repository
         private IServicesRepository servicesRepository;
         private ISettingsRepository settingsRepository;
         private ITermsRepository termsRepository;
+        private IKeyAreasRepository KeyAreasRepository;
         public Repositorymanager(RepositoryContext context)
         {
             _context = context;
@@ -119,6 +120,17 @@ namespace Repository
             }
         }
 
+        public IKeyAreasRepository KeyAreas
+        {
+            get
+            {
+                if(KeyAreasRepository== null)
+                {
+                    KeyAreasRepository = new KeyAreasRepository(_context);
+                }
+                return KeyAreasRepository;
+            }
+        }
         public async Task SaveAsync() => await _context.SaveChangesAsync();
     }
 }

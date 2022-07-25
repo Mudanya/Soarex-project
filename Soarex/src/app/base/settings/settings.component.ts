@@ -118,12 +118,12 @@ export class SettingsComponent implements OnInit {
 				.updateUtilitySettings(this.utilityFormData)
 				.subscribe({
 					next: success => console.log(success),
-					error: error => console.log(error),
+					error: error => console.log(error)
 				});
 		} else {
 			this.utilityService.postUtilitySettings(this.utilityFormData).subscribe({
 				next: success => console.log(success),
-				error: error => console.log(error),
+				error: error => console.log(error)
 			});
 		}
 	}

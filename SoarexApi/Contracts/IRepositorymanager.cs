@@ -16,6 +16,7 @@ namespace Contracts
         IServicesRepository Services { get; }
         ISettingsRepository Settings { get; }
         ITermsRepository Terms { get; }
+        IKeyAreasRepository KeyAreas { get; }
         Task SaveAsync();
     }
 }

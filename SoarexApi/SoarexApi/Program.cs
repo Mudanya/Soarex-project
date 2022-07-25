@@ -31,6 +31,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.ConfigureAboutUsService();
     builder.Services.ConfigureAuthenticationService();
     builder.Services.ConfigureGlobalService();
+    builder.Services.ConfigureKeyAreasService();
 }
 
 var app = builder.Build();

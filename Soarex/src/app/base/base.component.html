@@ -1,6 +1,6 @@
 <div class="hyperheader" [class.is-hyper]="isHyper"></div>
 <header class="home">
-    <app-nav></app-nav>
+    <app-nav [logo]="(settings$ | async)?.logo"></app-nav>
 </header>   
 
 

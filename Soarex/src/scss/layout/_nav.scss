@@ -58,7 +58,7 @@
 		.nav__items {
 			display: flex;
 			align-items: center;
-			gap: 10rem;
+			gap: 8rem;
 
 			@include breakpoint-down(large) {
 				gap: 2rem;

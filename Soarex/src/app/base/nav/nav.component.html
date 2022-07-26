@@ -18,7 +18,7 @@
 			</li>
 		</ul>
 		<ul class="nav__items">
-			
+
 			<li class="hov">
 				<div class="phone-top"><i class="bx bxs-phone-call"></i></div>
 				<a routerLink="/contact-us" routerLinkActive="active">Contact Us</a>
@@ -38,7 +38,9 @@
 	</div>
 </nav>
 <div class="closables">
-	<div class="nav__logo"></div>
+	<div class="nav__logo">
+    <img [src]="logo2"/>
+  </div>
 	<button class="close" (click)="toggleNavOn()" [class.on]="!isOpen">
 		<i class="bx bx-x"></i>
 	</button>

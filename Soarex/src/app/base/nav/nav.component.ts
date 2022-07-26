@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { fade } from 'src/app/animations';
 
@@ -11,19 +11,22 @@ import { fade } from 'src/app/animations';
   ]
 })
 export class NavComponent implements OnInit {
-  isOpen:boolean = true;
-  constructor(private route:ActivatedRoute, 
+  isOpen:boolean = true
+  @Input() logo?:string
+  constructor(private route:ActivatedRoute,
     private router:Router) { }
 
   ngOnInit(): void {
+    debugger
+    const log = this.logo;
    // this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
   }
   toggleNavOff()
   {
-    this.isOpen = false;
+    this.isOpen = false
   }
   toggleNavOn()
   {
-    this.isOpen = true;
+    this.isOpen = true
   }
 }
